@@ -1,5 +1,3 @@
-import { TextAverages } from "../../../../modules/text-checkers/TextAverages.js"
-
 const template = document.createElement('template')
 template.innerHTML = `
 
@@ -11,19 +9,34 @@ h1 {
 }
 
 </style>
-<h1>Text Averages App</h1>
+<h2>Text Averages</h2>
+<div id="avg-word-length">
+<h3>Average Word Length</h3>
+<p></p>
+</div>
+<div id="avg-sentence-length">
+<h3>Average Sentence Length</h3>
+<p></p>
+</div>
       `
-
 customElements.define('text-averages',
-
   class extends HTMLElement {
-    constructor () {
-      super()
+    static get observedAttributes() {
+      return ['avg-word-length', 'avg-sentence-length']
+    }
 
+    constructor() {
+      super()
       this.attachShadow({ mode: 'open' })
         .appendChild(template.content.cloneNode(true))
+    }
 
-        console.log('Hello from text-averages')
-
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'avg-word-length') {
+        this.shadowRoot.querySelector('#avg-word-length p').textContent = newValue
+      }
+      if (name === 'avg-sentence-length') {
+        this.shadowRoot.querySelector('#avg-sentence-length p').textContent = newValue
+      }
     }
   })
