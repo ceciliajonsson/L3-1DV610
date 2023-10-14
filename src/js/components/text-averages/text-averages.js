@@ -1,3 +1,5 @@
+import { TextAverages } from "../../../../modules/text-checkers/TextAverages.js"
+
 const template = document.createElement('template')
 template.innerHTML = `
 
