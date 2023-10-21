@@ -1,5 +1,5 @@
-import '../text-average'
-import '../text-counter'
+import '../text-averages'
+import '../text-counters'
 import '../text-frequencies'
 import '../text-manipulators'
 import { TextInputValidator } from '../../../../modules/text-checkers/TextInputValidator.js'
@@ -47,7 +47,7 @@ customElements.define('text-checker-app',
           let providedText = this.#validateTextInput()
           this.#calculateTextAverage(providedText)
           this.#calculateTextCounter(providedText)
-          this.#calculateFrequencies(providedText)
+          this.#calculateFrequency(providedText)
         }
         catch (error) {
           alert(error)
@@ -71,7 +71,7 @@ customElements.define('text-checker-app',
       const result = this.shadowRoot.querySelector('#result')
 
       const textAverage = new TextAverage()
-      const textAverageElement = document.createElement('text-average')
+      const textAverageElement = document.createElement('text-averages')
       textAverageElement.setAttribute('avg-word-length', textAverage.averageWordLength(text))
       textAverageElement.setAttribute('avg-sentence-length', textAverage.averageSentenceLength(text))
       result.appendChild(textAverageElement)
@@ -81,7 +81,7 @@ customElements.define('text-checker-app',
       const result = this.shadowRoot.querySelector('#result')
 
       const textCounter = new TextCounter()
-      const textCounterElement = document.createElement('text-counter')
+      const textCounterElement = document.createElement('text-counters')
       textCounterElement.setAttribute('count-character-inc-spaces', textCounter.countCharactersIncSpaces(text))
       textCounterElement.setAttribute('count-character-exc-spaces', textCounter.countCharactersExcSpaces(text))
       textCounterElement.setAttribute('count-letters', textCounter.countLetters(text))
@@ -93,9 +93,17 @@ customElements.define('text-checker-app',
       result.appendChild(textCounterElement)
     }
 
-    #calculateFrequencies(text) {
+    #calculateFrequency(text) {
       const result = this.shadowRoot.querySelector('#result')
 
+      const textFrequency = new TextFrequency()
+      const textFrequencyElement = document.createElement('text-frequencies')
+      textFrequencyElement.setAttribute('most-used-letters', textFrequency.mostUsedLetters(text))
+      textFrequencyElement.setAttribute('most-used-words', textFrequency.mostUsedWords(text))
+      textFrequencyElement.setAttribute('most-used-symbols', textFrequency.mostUsedSymbols(text))
+      textFrequencyElement.setAttribute('most-used-numbers', textFrequency.mostUsedNumbers(text))
+      textFrequencyElement.setAttribute('most-used-pronouns', textFrequency.mostUsedPronouns(text))
+      result.appendChild(textFrequencyElement)
 
     }
   })

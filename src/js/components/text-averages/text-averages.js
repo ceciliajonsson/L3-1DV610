@@ -19,7 +19,7 @@ h1 {
 <p></p>
 </div>
       `
-customElements.define('text-average',
+customElements.define('text-averages',
   class extends HTMLElement {
     static get observedAttributes() {
       return ['avg-word-length', 'avg-sentence-length']
