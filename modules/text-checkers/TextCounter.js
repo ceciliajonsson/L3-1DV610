@@ -8,7 +8,7 @@ export class TextCounter {
         let letters = text.split('')
         let count = 0;
         for (let letter of letters) {
-            if (letter.match(/^[a-zA-Z0-9.!?,']/)) {
+            if (letter.match(/^[a-zA-Zåäö0-9.!?,'()-]/)) {
                 count++
             }
         }
@@ -19,7 +19,7 @@ export class TextCounter {
         let letters = text.split('')
         let count = 0
         for (let letter of letters) {
-            if (letter.match(/[a-zA-Z]/)) {
+            if (letter.match(/[a-zA-Zåäö]/)) {
                 count++
             }
         }
@@ -41,7 +41,7 @@ export class TextCounter {
         return paragraphs.length
     }
     countVowels(text) {
-        let vowels = text.match(/[aeiou]/gi)
+        let vowels = text.match(/[aeiouåäö]/gi)
         return vowels ? vowels.length : 0
     }
 

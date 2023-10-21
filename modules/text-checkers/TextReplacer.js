@@ -12,7 +12,7 @@ export class TextReplacer {
 
     }
     replaceSymbol(text, symbolToReplace, symbolToReplaceWith) {
-        const allowedSymbols = ['.', ',', '!', '?', "'"]
+        const allowedSymbols = ['.', ',', '!', '?', "'", '(', ')', '-']
 
         if (!allowedSymbols.includes(symbolToReplace)) {
             throw new Error(`Invalid symbol: ${symbolToReplace}. Allowed symbols are: ${allowedSymbols.join(', ')}`)
@@ -26,10 +26,10 @@ export class TextReplacer {
         let parsedNumberToReplaceWith = parseFloat(numberToReplaceWith);
 
         if (isNaN(parsedNumberToReplace) || isNaN(parsedNumberToReplaceWith)) {
-            throw new Error("Both arguments must be of type number.");
+            throw new Error("Both arguments must be of type number.")
         }
 
-        return text.replace(new RegExp(parsedNumberToReplace, 'g'), parsedNumberToReplaceWith.toString());
+        return text.replace(new RegExp(parsedNumberToReplace, 'g'), parsedNumberToReplaceWith.toString())
     }
 
 }

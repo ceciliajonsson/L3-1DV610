@@ -1,7 +1,7 @@
 export class TextFrequency {
 
   mostUsedLetters(text, topFive = 5) {
-    let letters = text.replace(/[^a-z]/gi, '').toLowerCase().split('')
+    let letters = text.replace(/[^a-zåäö]/gi, '').toLowerCase().split('')
     let letterFrequencyList = {}
 
     for (let letter of letters) {
@@ -17,7 +17,7 @@ export class TextFrequency {
   }
 
   mostUsedWords(text) {
-    let words = text.toLowerCase().split(/\W+/)
+    let words = text.toLowerCase().split(/[^a-zA-ZåäöÅÄÖ0-9_]+/)
     let wordFrequencyList = {}
 
     for (let word of words) {
@@ -35,7 +35,7 @@ export class TextFrequency {
   }
 
   mostUsedSymbols(text) {
-    let symbols = text.match(/[.!?',]/g) || []
+    let symbols = text.match(/[.!?',()-]/g) || []
     let symbolFrequencyList = {}
 
     for (let symbol of symbols) {

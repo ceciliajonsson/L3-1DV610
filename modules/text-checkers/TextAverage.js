@@ -5,7 +5,7 @@ export class TextAverage {
         let totalLetterCount = 0
 
         for (let word of words) {
-            let lettersInWord = word.replace(/[^a-zA-Z]/g, '')
+            let lettersInWord = word.replace(/[^a-zA-Zåäö]/g, '')
             totalLetterCount += lettersInWord.length
         }
 

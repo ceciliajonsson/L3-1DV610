@@ -9,10 +9,10 @@ export class TextInputValidator {
     }
     if (this.text.length > 1000) {
       throw new Error("Input is too long!")
-    }    
+    }
   }
   #validateInput() {
-    const validCharacters = /^[a-zA-Z0-9\s.!?,']+$/
+    const validCharacters = /^[a-zA-Z0-9åäö\s.!?,\-'()]+$/
     if (!validCharacters.test(this.text)) {
       throw new Error("Input contains invalid characters!")
     }

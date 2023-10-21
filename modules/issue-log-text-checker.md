@@ -6,17 +6,24 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 ## TextAverages
 1. Remove 'static' keyword from all funcitons.
 2. Rename to TextAverage (from TextAverages) to have the same singular as the other classes
+3. Include å, ä, ö in averageWordLength
 
 ## TextCounter
 1. Remove 'static' keyword from all funcitons.
 2. Fix bug countSentences so it counts text without .!? as 0. And !! counts as 1 sentence.
+3. Include å, ä, ö in countLetters, countCharactersExcSpaces & countVowels 
+4. Include  -, (, and ) in countCharactersExcSpaces
 
 ## TextFrequency
 1. Remove 'static' keyword from all funcitons.
 2. Add return text in mostUsedSymbols, mostUsedNumbers and mostUsedPronouns if no instances were found.
+3. Update mostUsedLetters, mostUsedWords, mostUsedSymbols, mostUsedNumbers, mostUsedPronouns for a more visual pleasing output. 
+4. Updated mostUsedLetters to include å, ä and ö.
+5. Update mostUsedWords to include å, ä, ö and 0-9
 
 ## TextInputValidator
 1. Change so that removeAdditionalSpaces, validateInput, validateLength are all private functions.
+2. Include å, ä, ö, -, (, and ) in validateInput
 
 ## TextManipulator
 1. Remove 'static' keyword from all funcitons.
@@ -27,8 +34,9 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 ## TextReplacer (priviously part of TextManipulator)
 1. Update replaceWord to throw an error when a non-word (like a number) is entered
 2. Update replaceNumber to throw an error if a number isn't entered
+3. Update replaceSymbol to include -, ( and ) 
 
-2. Comment on line 43 in TextManipulator says: // If the text is empty or doesn't contain !?., send 'Hello World' back 
+4. Comment on line 43 in TextManipulator says: // If the text is empty or doesn't contain !?., send 'Hello World' back 
 This is false as this has been updated and now returns: 'Couldn\'t find any sentences in the text.'
 
 ## Test
