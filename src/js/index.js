@@ -1,1 +1,0 @@
-import './components/text-checker-app'
