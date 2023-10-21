@@ -13,6 +13,7 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 
 ## TextFrequency
 1. Remove 'static' keyword from all funcitons.
+2. Add return text in mostUsedSymbols, mostUsedNumbers and mostUsedPronouns if no instances were found.
 
 ## TextInputValidator
 1. Change so that removeAdditionalSpaces, validateInput, validateLength are all private functions.

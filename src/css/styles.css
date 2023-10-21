@@ -21,42 +21,29 @@ h2 {
     font-family: termina, sans-serif;
     font-weight: 600;
     font-style: normal;
+    font-size: 24;
 }
 h3 {
     font-family: termina, sans-serif;
     font-weight: 600;
     font-style: normal;
-}
-h4 {
-	font-family: termina, sans-serif;
-    font-weight: 600;
-    font-style: normal;
+    font-size: 18;
 }
 
-h5 {
-	font-family: termina, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
 p {
     font-family: termina, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 12px;
+    font-size: 16px;
 }
-label {
-	font-family: termina, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-	font-size: 13px;
-}
+
 textarea {
 	border-radius: 0;
 	border: 1px solid #333;
 	font-family: termina, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 12px;
+    font-size: 16px;
 	padding: 5px;
     width: 50%;
     max-width: 50%;
@@ -72,7 +59,7 @@ input {
 	font-family: termina, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 12px;
+    font-size: 16px;
 	padding: 5px;
 	width: 138px;
 }
@@ -80,7 +67,7 @@ pre {
 	font-family: termina, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 12px;
+    font-size: 16px;
 }
 .start-area {
     padding: 20px;
