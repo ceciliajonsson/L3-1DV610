@@ -30,7 +30,7 @@ export class TextCounter {
     }
     countSentences(text) {
         let sentences = text.split(/[.!?]/)
-        return sentences.length 
+        return sentences.length
     }
     countParagraphs(text) {
         let paragraphs = text.split(/\n/)
@@ -44,7 +44,7 @@ export class TextCounter {
     countConsonants(text) {
         let consonants = text.match(/[bcdfghjklmnpqrstvwxyz]/gi);
         return consonants ? consonants.length : 0
-}
+    }
 
-    
+
 }
