@@ -1,10 +1,11 @@
-import '../text-averages'
-import '../text-counters'
+import '../text-average'
+import '../text-counter'
 import '../text-frequencies'
 import '../text-manipulators'
 import { TextInputValidator } from '../../../../modules/text-checkers/TextInputValidator.js'
-import { TextAverages } from '../../../../modules/text-checkers/TextAverages.js'
-import { TextCounter } from '../../../../modules/text-checkers/TextCounter'
+import { TextAverage } from '../../../../modules/text-checkers/TextAverage.js'
+import { TextCounter } from '../../../../modules/text-checkers/TextCounter.js'
+import { TextFrequency } from '../../../../modules/text-checkers/TextFrequency.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -44,8 +45,9 @@ customElements.define('text-checker-app',
           event.preventDefault()
           this.#clearResult()
           let providedText = this.#validateTextInput()
-          this.#calculateTextAverages(providedText)
-          this.#calculateTextCounters(providedText)
+          this.#calculateTextAverage(providedText)
+          this.#calculateTextCounter(providedText)
+          this.#calculateFrequencies(providedText)
         }
         catch (error) {
           alert(error)
@@ -65,30 +67,35 @@ customElements.define('text-checker-app',
 
       return providedText
     }
-    #calculateTextAverages(text) {
+    #calculateTextAverage(text) {
       const result = this.shadowRoot.querySelector('#result')
 
-      const textAverages = new TextAverages()
-      const textAveragesElement = document.createElement('text-averages')
-      textAveragesElement.setAttribute('avg-word-length', textAverages.averageWordLength(text))
-      textAveragesElement.setAttribute('avg-sentence-length', textAverages.averageSentenceLength(text))
-      result.appendChild(textAveragesElement)
-
+      const textAverage = new TextAverage()
+      const textAverageElement = document.createElement('text-average')
+      textAverageElement.setAttribute('avg-word-length', textAverage.averageWordLength(text))
+      textAverageElement.setAttribute('avg-sentence-length', textAverage.averageSentenceLength(text))
+      result.appendChild(textAverageElement)
     }
-    #calculateTextCounters(text) {
+
+    #calculateTextCounter(text) {
       const result = this.shadowRoot.querySelector('#result')
 
-      const textCounters = new TextCounter()
-      const textCountersElement = document.createElement('text-counters')
-      textCountersElement.setAttribute('count-character-inc-spaces', textCounters.countCharactersIncSpaces(text))
-      textCountersElement.setAttribute('count-character-exc-spaces', textCounters.countCharactersExcSpaces(text))
-      textCountersElement.setAttribute('count-letters', textCounters.countLetters(text))
-      textCountersElement.setAttribute('count-words', textCounters.countWords(text))
-      textCountersElement.setAttribute('count-sentences', textCounters.countSentences(text))
-      textCountersElement.setAttribute('count-paragraphs', textCounters.countParagraphs(text))
-      textCountersElement.setAttribute('count-vowels', textCounters.countVowels(text))
-      textCountersElement.setAttribute('count-consonants', textCounters.countConsonants(text))
-      result.appendChild(textCountersElement)
+      const textCounter = new TextCounter()
+      const textCounterElement = document.createElement('text-counter')
+      textCounterElement.setAttribute('count-character-inc-spaces', textCounter.countCharactersIncSpaces(text))
+      textCounterElement.setAttribute('count-character-exc-spaces', textCounter.countCharactersExcSpaces(text))
+      textCounterElement.setAttribute('count-letters', textCounter.countLetters(text))
+      textCounterElement.setAttribute('count-words', textCounter.countWords(text))
+      textCounterElement.setAttribute('count-sentences', textCounter.countSentences(text))
+      textCounterElement.setAttribute('count-paragraphs', textCounter.countParagraphs(text))
+      textCounterElement.setAttribute('count-vowels', textCounter.countVowels(text))
+      textCounterElement.setAttribute('count-consonants', textCounter.countConsonants(text))
+      result.appendChild(textCounterElement)
+    }
+
+    #calculateFrequencies(text) {
+      const result = this.shadowRoot.querySelector('#result')
+
 
     }
   })

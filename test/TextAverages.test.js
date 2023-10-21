@@ -1,16 +1,16 @@
-import { TextAverages } from '../modules/text-checkers/TextAverages.js'
+import { TextAverage } from '../modules/text-checkers/TextAverage.js'
 
-describe('TextAverages', () => {
-    let textAverages
+describe('TextAverage', () => {
+    let textAverage
 
     beforeEach(() => {
-        textAverages = new TextAverages()
+        textAverage = new TextAverage()
     })
 
     describe('averageWordLength', () => {
         it('returns the average word length of a text', () => {
             let text = 'The quick brown fox jumped over the lazy dog.'
-            let averageWordLength = textAverages.averageWordLength(text)
+            let averageWordLength = textAverage.averageWordLength(text)
             expect(averageWordLength).toEqual(4)
         })
     })
@@ -18,7 +18,7 @@ describe('TextAverages', () => {
     describe('averageSentenceLength', () => {
         it('returns the average sentence length of a text', () => {
             let text = 'The quick brown fox jumped over the lazy dog. The dog was not amused.'
-            let averageSentenceLength = textAverages.averageSentenceLength(text)
+            let averageSentenceLength = textAverage.averageSentenceLength(text)
             expect(averageSentenceLength).toEqual(7)
         })
     })

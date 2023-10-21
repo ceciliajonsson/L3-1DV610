@@ -5,6 +5,7 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 
 ## TextAverages
 1. Remove 'static' keyword from all funcitons.
+2. Rename to TextAverage (from TextAverages) to have the same singular as the other classes
 
 ## TextCounter
 1. Remove 'static' keyword from all funcitons.

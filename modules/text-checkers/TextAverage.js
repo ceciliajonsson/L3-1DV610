@@ -1,4 +1,4 @@
-export class TextAverages {
+export class TextAverage {
 
     averageWordLength(text) {
         let words = text.toLowerCase().split(/\s+/)
@@ -22,7 +22,7 @@ export class TextAverages {
         }
 
         let averageSentenceWords = totalWordCount / sentences.length
-        return Math.round(averageSentenceWords * 100) / 100 
+        return Math.round(averageSentenceWords * 100) / 100
     }
 }
 

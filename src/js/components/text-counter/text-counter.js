@@ -9,7 +9,7 @@ h1 {
 }
 
 </style>
-<h2>Text Counters</h2>
+<h2>Text Counter</h2>
 
 <div id="count-character-inc-spaces">
 <h3>Count Characters Including Spaces</h3>
@@ -55,7 +55,7 @@ h1 {
 </div>
 
 `
-customElements.define('text-counters',
+customElements.define('text-counter',
     class extends HTMLElement {
         static get observedAttributes() {
             return ['count-character-inc-spaces', 'count-character-exc-spaces',

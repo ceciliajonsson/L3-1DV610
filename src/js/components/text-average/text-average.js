@@ -9,7 +9,7 @@ h1 {
 }
 
 </style>
-<h2>Text Averages</h2>
+<h2>Text Average</h2>
 <div id="avg-word-length">
 <h3>Average Word Length</h3>
 <p></p>
@@ -19,7 +19,7 @@ h1 {
 <p></p>
 </div>
       `
-customElements.define('text-averages',
+customElements.define('text-average',
   class extends HTMLElement {
     static get observedAttributes() {
       return ['avg-word-length', 'avg-sentence-length']
