@@ -16,7 +16,6 @@ export class TextReverser {
         for (let i = 0; i < sentences.length; i++) {
             sentences[i] = sentences[i].replace(' ,', ',')
 
-            // Capitalize first letter of each sentence, except the last one (which was the original first sentence)
             if (i < sentences.length - 1) {
                 sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1)
             }

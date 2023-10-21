@@ -6,7 +6,7 @@ template.innerHTML = `
 
 </style>
 <div class="text-averages box">
-<h2>Text Average</h2>
+<h2>Text Averages</h2>
 <div id="avg-word-length">
 <h3>Average Word Length</h3>
 <p></p>

@@ -20,7 +20,9 @@ template.innerHTML = `
 <div class="container">
   <div class="start-area">
 <h1>Text Checker App</h1>
-
+<p>The Text Checker App provides a comprehensive suite 
+  of tools designed to help you delve into the depths of any text, 
+  offering insights that can enhance clarity, understanding, and even creativity.</p>
   <form id="main-form">
   <textarea name="text-input" id="text-input" placeholder="Enter your text here..."></textarea>
   <button id="submit-button"><p>Submit</p></button>

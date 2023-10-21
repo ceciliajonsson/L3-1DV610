@@ -7,7 +7,7 @@ template.innerHTML = `
 
 </style>
 <div class="text-reversers box">
-<h2>Text Reverser</h2>
+<h2>Text Reversers</h2>
 
 <div id="reverse-text">
 <h3>Reverse Text</h3>

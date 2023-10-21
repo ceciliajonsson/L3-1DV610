@@ -6,7 +6,7 @@ template.innerHTML = `
 
 </style>
 <div class="text-counters box">
-<h2>Text Counter</h2>
+<h2>Text Counters</h2>
 
 <div id="count-character-inc-spaces">
 <h3>Count Characters Including Spaces</h3>
