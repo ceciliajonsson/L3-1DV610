@@ -3,12 +3,9 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
 
 </style>
+<div class="text-frequencies box">
 <h2>Text Frequencies</h2>
 
 <div id="most-used-letters">
@@ -34,6 +31,7 @@ h1 {
 <div id="most-used-pronouns">
 <h3>Most Used Pronouns</h3>
 <p></p>
+</div>
 </div>
       `
 customElements.define('text-frequencies',

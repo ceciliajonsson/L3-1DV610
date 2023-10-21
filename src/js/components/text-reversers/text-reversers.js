@@ -3,12 +3,10 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
+
 
 </style>
+<div class="text-reversers box">
 <h2>Text Reverser</h2>
 
 <div id="reverse-text">
@@ -19,6 +17,7 @@ h1 {
 <div id="reverse-sentences">
 <h3>Reverse Sentences</h3>
 <p></p>
+</div>
 </div>
       `
 customElements.define('text-reversers',

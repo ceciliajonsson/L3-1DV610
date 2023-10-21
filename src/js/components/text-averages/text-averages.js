@@ -3,12 +3,9 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
 
 </style>
+<div class="text-averages box">
 <h2>Text Average</h2>
 <div id="avg-word-length">
 <h3>Average Word Length</h3>
@@ -17,6 +14,7 @@ h1 {
 <div id="avg-sentence-length">
 <h3>Average Sentence Length</h3>
 <p></p>
+</div>
 </div>
       `
 customElements.define('text-averages',

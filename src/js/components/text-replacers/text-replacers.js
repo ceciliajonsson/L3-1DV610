@@ -3,14 +3,12 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
+
 
 </style>
-<h2>Text Replacers</h2>
+<div class="text-replacers box">
 
+<h2>Text Replacers</h2>
 
 <div id="replace-word">
 <h3>Replace Word</h3>
@@ -34,6 +32,7 @@ h1 {
 <input type="text" placeholder="Replace with" id="replace-number-with">
 <button id="replace-number-button">Replace</button>
 <p></p>
+</div>
 </div>
       `
 

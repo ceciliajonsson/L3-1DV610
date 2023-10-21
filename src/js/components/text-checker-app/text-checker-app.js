@@ -15,19 +15,17 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
 
 </style>
+<div class="container">
+  <div class="start-area">
 <h1>Text Checker App</h1>
 
-<div id="container">
-  <form>
+  <form id="main-form">
   <textarea name="text-input" id="text-input" placeholder="Enter your text here..."></textarea>
   <button id="submit-button"><p>Submit</p></button>
   </form>
+</div>
   <div id="result"></div>
 </div>   
 

@@ -1,3 +1,154 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-color: #f3f1ee; 
+	
+}
+
 h1 {
-    color: red;
+    font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 28;
+}
+h2 {
+    font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+h3 {
+    font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+h4 {
+	font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h5 {
+	font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+p {
+    font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+label {
+	font-family: termina, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+	font-size: 13px;
+}
+textarea {
+	border-radius: 0;
+	border: 1px solid #333;
+	font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+	padding: 5px;
+    width: 50%;
+    max-width: 50%;
+    min-width: 200px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 200px;
+    margin-bottom: 20px;
+}
+input {
+	border-radius: 0;
+	border: 1px solid #333;
+	font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+	padding: 5px;
+	width: 138px;
+}
+pre {
+	font-family: termina, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+.start-area {
+    padding: 20px;
+}
+form {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+}
+#result {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equally wide columns */
+    gap: 20px 20px; /* This sets the row gap to 20 pixels and the column gap to 15 pixels */
+
+    
+    /* Define grid areas */
+    grid-template-areas: 
+        "average counter frequencies"
+        "reverser reverser replacers";
+    
+    /* Ensure each row is of equal height */
+    grid-template-rows: 1fr 1fr;
+    
+    height: 100%; /* Ensure the grid container takes up full available height */
+    margin: 20px;
+}
+
+/* Assign areas to the divs */
+.text-averages {
+    grid-area: average;
+}
+
+.text-counters {
+    grid-area: counter;
+}
+
+.text-frequencies {
+    grid-area: frequencies;
+}
+
+.text-reverser {
+    grid-area: reverser;
+}
+
+.text-replacers {
+    grid-area: replacers;
+}
+
+/* Ensure each content area stretches to fill its grid area */
+.text-averages, .text-counters, .text-frequencies, .text-reversers, .text-replacers {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #result {
+    flex-direction: column;
+    grid-template-areas:         "average counter frequencies"
+        "reverser reverser replacers";
+    display: flex;
+  }
+}
+
+.box {
+    border: 1px solid #333;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }

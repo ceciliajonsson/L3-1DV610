@@ -3,19 +3,16 @@ template.innerHTML = `
 
 <style>
 @import "../../../css/styles.css";
-            
-h1 {
-  margin: 20px;
-}
 
 </style>
+<div class="text-counters box">
 <h2>Text Counter</h2>
 
 <div id="count-character-inc-spaces">
 <h3>Count Characters Including Spaces</h3>
 <p></p>
-
 </div>
+
 <div id="count-character-exc-spaces">
 <h3>Count Characters Excluding Spaces</h3>
 <p></p>
@@ -24,7 +21,6 @@ h1 {
 <div id="count-letters">
 <h3>Count Letters</h3>
 <p></p>
-</div>
 </div>
 
 <div id="count-words">
@@ -52,6 +48,7 @@ h1 {
 <div id="count-consonants">
 <h3>Count Consonants</h3>
 <p></p>
+</div>
 </div>
 
 `
