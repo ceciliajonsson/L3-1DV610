@@ -12,8 +12,8 @@ export class TextFrequency {
       }
     }
 
-    let sortedLetters = Object.entries(letterFrequencyList).sort((a, b) => b[1] - a[1])
-    return sortedLetters.slice(0, topFive)
+    let sortedLetters = Object.entries(letterFrequencyList).sort((a, b) => b[1] - a[1]).slice(0, topFive)
+    return sortedLetters.map(entry => `${entry[0]}: ${entry[1]}`).join(' | ')
   }
 
   mostUsedWords(text) {
@@ -29,9 +29,11 @@ export class TextFrequency {
         }
       }
     }
-    let sortWords = Object.entries(wordFrequencyList).sort((a, b) => b[1] - a[1])
-    return sortWords.slice(0, 5)
+    let sortWords = Object.entries(wordFrequencyList).sort((a, b) => b[1] - a[1]).slice(0, 5)
+
+    return sortWords.map(entry => `${entry[0]}: ${entry[1]}`).join(' | ')
   }
+
   mostUsedSymbols(text) {
     let symbols = text.match(/[.!?',]/g) || []
     let symbolFrequencyList = {}
@@ -45,12 +47,13 @@ export class TextFrequency {
     }
 
     if (symbols.length === 0) {
-      return "No symbols found";
+      return "No symbols found"
     }
 
-    let sortedSymbols = Object.entries(symbolFrequencyList).sort((a, b) => b[1] - a[1])
-    return sortedSymbols.slice(0, 5)
+    let sortedSymbols = Object.entries(symbolFrequencyList).sort((a, b) => b[1] - a[1]).slice(0, 5)
+    return sortedSymbols.map(entry => `${entry[0]}: ${entry[1]}`).join(' | ')
   }
+
   mostUsedNumbers(text) {
     let numbers = text.match(/\d/g) || []
     let numberFrequencyList = {}
@@ -63,11 +66,11 @@ export class TextFrequency {
       }
     }
     if (numbers.length === 0) {
-      return "No numbers found";
+      return "No numbers found"
     }
 
-    let sortedNumbers = Object.entries(numberFrequencyList).sort((a, b) => b[1] - a[1])
-    return sortedNumbers.slice(0, 5)
+    let sortedNumbers = Object.entries(numberFrequencyList).sort((a, b) => b[1] - a[1]).slice(0, 5)
+    return sortedNumbers.map(entry => `${entry[0]}: ${entry[1]}`).join(' | ')
   }
 
   mostUsedPronouns(text) {
@@ -94,12 +97,12 @@ export class TextFrequency {
       }
     }
 
-    let sortedPronouns = Object.entries(pronounFrequencyList).sort((a, b) => b[1] - a[1])
+    let sortedPronouns = Object.entries(pronounFrequencyList).sort((a, b) => b[1] - a[1]).slice(0, 5)
 
     if (sortedPronouns.length === 0) {
       return "No pronouns found"
     }
 
-    return sortedPronouns
+    return sortedPronouns.map(entry => `${entry[0]}: ${entry[1]}`).join(' | ')
   }
 }
