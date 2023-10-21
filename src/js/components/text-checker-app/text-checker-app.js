@@ -1,11 +1,12 @@
 import '../text-averages'
 import '../text-counters'
 import '../text-frequencies'
-import '../text-manipulators'
+import '../text-reversers'
 import { TextInputValidator } from '../../../../modules/text-checkers/TextInputValidator.js'
 import { TextAverage } from '../../../../modules/text-checkers/TextAverage.js'
 import { TextCounter } from '../../../../modules/text-checkers/TextCounter.js'
 import { TextFrequency } from '../../../../modules/text-checkers/TextFrequency.js'
+import { TextReverser } from '../../../../modules/text-checkers/TextReverser.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -47,7 +48,8 @@ customElements.define('text-checker-app',
           let providedText = this.#validateTextInput()
           this.#calculateTextAverage(providedText)
           this.#calculateTextCounter(providedText)
-          this.#calculateFrequency(providedText)
+          this.#calculateTextFrequency(providedText)
+          this.#calculateTextReverser(providedText)
         }
         catch (error) {
           alert(error)
@@ -93,7 +95,7 @@ customElements.define('text-checker-app',
       result.appendChild(textCounterElement)
     }
 
-    #calculateFrequency(text) {
+    #calculateTextFrequency(text) {
       const result = this.shadowRoot.querySelector('#result')
 
       const textFrequency = new TextFrequency()
@@ -104,6 +106,16 @@ customElements.define('text-checker-app',
       textFrequencyElement.setAttribute('most-used-numbers', textFrequency.mostUsedNumbers(text))
       textFrequencyElement.setAttribute('most-used-pronouns', textFrequency.mostUsedPronouns(text))
       result.appendChild(textFrequencyElement)
+    }
 
+
+    #calculateTextReverser(text) {
+      const result = this.shadowRoot.querySelector('#result')
+
+      const textReverser = new TextReverser()
+      const textReverserElement = document.createElement('text-reversers')
+      textReverserElement.setAttribute('reverse-text', textReverser.reverseText(text))
+      textReverserElement.setAttribute('reverse-sentences', textReverser.reverseSentences(text))
+      result.appendChild(textReverserElement)
     }
   })
