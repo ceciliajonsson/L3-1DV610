@@ -23,6 +23,9 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 3. Remove unneccecery comments in replaceWord.
 4. Split TextManipulator up to two different modules. TextReplacer and TextReverser
 
+## TextReplacer (priviously part of TextManipulator)
+1. Update replaceWord to throw an error when a non-word (like a number) is entered
+2. Update replaceNumber to throw an error if a number isn't entered
 
 2. Comment on line 43 in TextManipulator says: // If the text is empty or doesn't contain !?., send 'Hello World' back 
 This is false as this has been updated and now returns: 'Couldn\'t find any sentences in the text.'

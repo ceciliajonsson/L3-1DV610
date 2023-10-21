@@ -1,7 +1,7 @@
 export class TextReplacer {
 
     replaceWord(text, wordToReplace, wordToReplaceWith) {
-        if (typeof text !== 'string' || typeof wordToReplace !== 'string' || typeof wordToReplaceWith !== 'string') {
+        if (!isNaN(wordToReplace) || !isNaN(wordToReplaceWith)) {
             throw new TypeError("All arguments must be of type string.")
         }
 
@@ -22,11 +22,14 @@ export class TextReplacer {
     }
 
     replaceNumber(text, numberToReplace, numberToReplaceWith) {
-        if (typeof numberToReplace !== 'number' || typeof numberToReplaceWith !== 'number') {
-            throw new TypeError("Both arguments must be of type number.")
+        let parsedNumberToReplace = parseFloat(numberToReplace);
+        let parsedNumberToReplaceWith = parseFloat(numberToReplaceWith);
+
+        if (isNaN(parsedNumberToReplace) || isNaN(parsedNumberToReplaceWith)) {
+            throw new Error("Both arguments must be of type number.");
         }
 
-        return text.replace(new RegExp(numberToReplace, 'g'), numberToReplaceWith)
+        return text.replace(new RegExp(parsedNumberToReplace, 'g'), parsedNumberToReplaceWith.toString());
     }
 
 }

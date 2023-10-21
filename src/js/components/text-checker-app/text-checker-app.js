@@ -2,11 +2,13 @@ import '../text-averages'
 import '../text-counters'
 import '../text-frequencies'
 import '../text-reversers'
+import '../text-replacers'
 import { TextInputValidator } from '../../../../modules/text-checkers/TextInputValidator.js'
 import { TextAverage } from '../../../../modules/text-checkers/TextAverage.js'
 import { TextCounter } from '../../../../modules/text-checkers/TextCounter.js'
 import { TextFrequency } from '../../../../modules/text-checkers/TextFrequency.js'
 import { TextReverser } from '../../../../modules/text-checkers/TextReverser.js'
+import { TextReplacer } from '../../../../modules/text-checkers/TextReplacer.js'
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -50,6 +52,7 @@ customElements.define('text-checker-app',
           this.#calculateTextCounter(providedText)
           this.#calculateTextFrequency(providedText)
           this.#calculateTextReverser(providedText)
+          this.#calculateTextReplacer(providedText)
         }
         catch (error) {
           alert(error)
@@ -108,7 +111,6 @@ customElements.define('text-checker-app',
       result.appendChild(textFrequencyElement)
     }
 
-
     #calculateTextReverser(text) {
       const result = this.shadowRoot.querySelector('#result')
 
@@ -117,5 +119,56 @@ customElements.define('text-checker-app',
       textReverserElement.setAttribute('reverse-text', textReverser.reverseText(text))
       textReverserElement.setAttribute('reverse-sentences', textReverser.reverseSentences(text))
       result.appendChild(textReverserElement)
+    }
+
+    #calculateTextReplacer(providedText) {
+      const result = this.shadowRoot.querySelector('#result')
+
+      const textReplacerElement = document.createElement('text-replacers')
+      result.appendChild(textReplacerElement)
+
+      customElements.whenDefined('text-replacers').then(() => {
+        const replaceWordButton = textReplacerElement.shadowRoot.querySelector('#replace-word-button')
+        const replaceSymbolButton = textReplacerElement.shadowRoot.querySelector('#replace-symbol-button')
+        const replaceNumberButton = textReplacerElement.shadowRoot.querySelector('#replace-number-button')
+
+        const textReplacer = new TextReplacer()
+
+        replaceWordButton.addEventListener('click', () => {
+          const wordToReplace = textReplacerElement.shadowRoot.querySelector('#word-to-replace').value
+          const wordReplaceWith = textReplacerElement.shadowRoot.querySelector('#replace-word-with').value
+
+          try {
+            const replacedText = textReplacer.replaceWord(providedText, wordToReplace, wordReplaceWith)
+            textReplacerElement.shadowRoot.querySelector('#replace-word p').textContent = replacedText
+          } catch (e) {
+            textReplacerElement.shadowRoot.querySelector('#replace-word p').textContent = e.message
+          }
+        })
+
+        replaceSymbolButton.addEventListener('click', () => {
+          const symbolToReplace = textReplacerElement.shadowRoot.querySelector('#symbol-to-replace').value
+          const symbolReplaceWith = textReplacerElement.shadowRoot.querySelector('#replace-symbol-with').value
+
+          try {
+            const replacedText = textReplacer.replaceSymbol(providedText, symbolToReplace, symbolReplaceWith)
+            textReplacerElement.shadowRoot.querySelector('#replace-symbol p').textContent = replacedText
+          } catch (e) {
+            textReplacerElement.shadowRoot.querySelector('#replace-symbol p').textContent = e.message
+          }
+        })
+
+        replaceNumberButton.addEventListener('click', () => {
+          const numberToReplace = parseFloat(textReplacerElement.shadowRoot.querySelector('#number-to-replace').value);
+          const numberReplaceWith = parseFloat(textReplacerElement.shadowRoot.querySelector('#replace-number-with').value);
+
+          try {
+            const replacedText = textReplacer.replaceNumber(providedText, numberToReplace, numberReplaceWith)
+            textReplacerElement.shadowRoot.querySelector('#replace-number p').textContent = replacedText
+          } catch (e) {
+            textReplacerElement.shadowRoot.querySelector('#replace-number p').textContent = e.message
+          }
+        })
+      })
     }
   })
