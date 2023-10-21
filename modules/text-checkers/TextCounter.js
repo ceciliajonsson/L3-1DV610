@@ -30,6 +30,10 @@ export class TextCounter {
     }
     countSentences(text) {
         let sentences = text.split(/[.!?]/)
+        sentences = sentences.filter(sentence => sentence.trim() !== '')
+        if (!/[.!?]$/.test(text)) {
+            return sentences.length - 1
+        }
         return sentences.length
     }
     countParagraphs(text) {

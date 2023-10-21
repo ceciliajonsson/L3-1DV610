@@ -8,6 +8,7 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 
 ## TextCounter
 1. Remove 'static' keyword from all funcitons.
+2. Fix bug countSentences so it counts text without .!? as 0. And !! counts as 1 sentence.
 
 ## TextFrequency
 1. Remove 'static' keyword from all funcitons.
