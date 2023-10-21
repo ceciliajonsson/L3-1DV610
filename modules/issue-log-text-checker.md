@@ -19,6 +19,10 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 
 ## TextManipulator
 1. Remove 'static' keyword from all funcitons.
+2. Remove unneccecery comment ("If the text is empty or doesn't contain !?., send 'Hello World' back") in reverseSentences.
+3. Remove unneccecery comments in replaceWord.
+4. Split TextManipulator up to two different modules. TextReplacer and TextReverser
+
 
 2. Comment on line 43 in TextManipulator says: // If the text is empty or doesn't contain !?., send 'Hello World' back 
 This is false as this has been updated and now returns: 'Couldn\'t find any sentences in the text.'
