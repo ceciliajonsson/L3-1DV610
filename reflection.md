@@ -128,7 +128,7 @@ The Law of Demeter (p. 97) is a guideline to ensure that modules don't reach int
 
 The code I wrote has instances where these principles are stretched, especially when querying the DOM. For example `const wordReplaceWith = textReplacerElement.shadowRoot.querySelector('#replace-word-with').value`. As this can make the code harder to maintain, instances like these should preferble be refactored and encapsulated.
 
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)
 
 ## Chapter 7: Error Handling
 
