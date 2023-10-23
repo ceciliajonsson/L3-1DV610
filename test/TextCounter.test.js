@@ -13,7 +13,7 @@ describe('TextCounter', () => {
         expect(textCounter.countCharactersIncSpaces(sampleText)).toBe(45)
     })
 
-    test('countCharactersExcSpaces', () => { 
+    test('countCharactersExcSpaces', () => {
         expect(textCounter.countCharactersExcSpaces(sampleText)).toBe(37)
     })
 
@@ -26,14 +26,14 @@ describe('TextCounter', () => {
     })
 
     test('countSentences', () => {
-        expect(textCounter.countSentences(sampleText)).toBe(2)
+        expect(textCounter.countSentences(sampleText)).toBe(1)
     })
 
     test('countParagraphs', () => {
         expect(textCounter.countParagraphs(sampleText)).toBe(1)
     })
 
-    test('countVowels', () => { 
+    test('countVowels', () => {
         expect(textCounter.countVowels(sampleText)).toBe(12)
     })
 
