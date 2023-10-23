@@ -87,6 +87,7 @@ The "Text Checker App" has been manually tested and has met the expectations pro
 ### Method
 The test was carried out with a user actively engaging with the application. This was done to provide the developer with insights into the application's intuitiveness, identify any overlooked UX/UI features, and gather user feedback on usability to further improve the app.
 
+### Findings
 1. Implemented - The user was missing being able to use å, ä, ö
 2. Implemented - The user was missing being able to use () -
 3. Implemented - The user would have liked to see a description of tha app.

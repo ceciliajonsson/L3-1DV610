@@ -121,7 +121,7 @@ customElements.define('text-checker-app',
       result.appendChild(textReverserElement)
     }
 
-    #calculateTextReplacer(providedText) {
+    #calculateTextReplacer(text) {
       const result = this.shadowRoot.querySelector('#result')
 
       const textReplacerElement = document.createElement('text-replacers')
@@ -139,7 +139,7 @@ customElements.define('text-checker-app',
           const wordReplaceWith = textReplacerElement.shadowRoot.querySelector('#replace-word-with').value
 
           try {
-            const replacedText = textReplacer.replaceWord(providedText, wordToReplace, wordReplaceWith)
+            const replacedText = textReplacer.replaceWord(text, wordToReplace, wordReplaceWith)
             textReplacerElement.shadowRoot.querySelector('#replace-word p').textContent = replacedText
           } catch (e) {
             textReplacerElement.shadowRoot.querySelector('#replace-word p').textContent = e.message
@@ -151,7 +151,7 @@ customElements.define('text-checker-app',
           const symbolReplaceWith = textReplacerElement.shadowRoot.querySelector('#replace-symbol-with').value
 
           try {
-            const replacedText = textReplacer.replaceSymbol(providedText, symbolToReplace, symbolReplaceWith)
+            const replacedText = textReplacer.replaceSymbol(text, symbolToReplace, symbolReplaceWith)
             textReplacerElement.shadowRoot.querySelector('#replace-symbol p').textContent = replacedText
           } catch (e) {
             textReplacerElement.shadowRoot.querySelector('#replace-symbol p').textContent = e.message
@@ -159,8 +159,8 @@ customElements.define('text-checker-app',
         })
 
         replaceNumberButton.addEventListener('click', () => {
-          const numberToReplace = parseFloat(textReplacerElement.shadowRoot.querySelector('#number-to-replace').value);
-          const numberReplaceWith = parseFloat(textReplacerElement.shadowRoot.querySelector('#replace-number-with').value);
+          const numberToReplace = parseFloat(textReplacerElement.shadowRoot.querySelector('#number-to-replace').value)
+          const numberReplaceWith = parseFloat(textReplacerElement.shadowRoot.querySelector('#replace-number-with').value)
 
           try {
             const replacedText = textReplacer.replaceNumber(providedText, numberToReplace, numberReplaceWith)

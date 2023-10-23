@@ -1,6 +1,7 @@
 # Text Checker App
 Project: L3-1DV610
 
+![Gif of the Text Checker App](<text checker app.gif>)
 
 ## Table of Contents
 1. Get Started - User & Developer

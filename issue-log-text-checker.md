@@ -27,7 +27,7 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 
 ## TextManipulator
 1. Remove 'static' keyword from all funcitons.
-2. Remove unneccecery comment ("If the text is empty or doesn't contain !?., send 'Hello World' back") in reverseSentences.
+2. Remove unneccecery comment ("If the text is empty or doesn't contain !?., send 'Hello World' back") in reverseSentences. This is false as this has been updated and now returns: 'Couldn\'t find any sentences in the text.'
 3. Remove unneccecery comments in replaceWord.
 4. Split TextManipulator up to two different modules. TextReplacer and TextReverser
 
@@ -36,18 +36,11 @@ To be documented as issues in https://github.com/ceciliajonsson/L2-1DV610/issues
 2. Update replaceNumber to throw an error if a number isn't entered
 3. Update replaceSymbol to include -, ( and ) 
 
-4. Comment on line 43 in TextManipulator says: // If the text is empty or doesn't contain !?., send 'Hello World' back 
-This is false as this has been updated and now returns: 'Couldn\'t find any sentences in the text.'
-
 ## Test
 1. Update the tests as we are not using `static` anymore.
-
-1. Define a variable (for example textAverages/textCounter/textFrequency/textManipulator) outside of the individual tests.
-2. Add a beforeEach block to instantiate TextAverages/TextCounter/TextFrequency/TextManipulator before each test.
-3. Update the methods from being called on, example textAverages, to being called on the textAverages instance.
-
+    1. Define a variable (for example textAverages/textCounter/textFrequency/textManipulator) outside of the individual tests.
+    2. Add a beforeEach block to instantiate TextAverages/TextCounter/TextFrequency/TextManipulator before each test.
+    3. Update the methods from being called on, example textAverages, to being called on the textAverages instance.
 2. For the TextInputValidator test. Separate out these into distinct test cases to make the tests more granular, readable, and maintainable. Each test should ideally test one "thing" or behavior.
-
 3. Test TextFrequency - should correctly find the most used letters is incorrect. Result should be: 'e', 11, ['o', 6], ['t', 4], ['h', 4], ['u', 3]
-
 4. Given that the methods are now private in TextInputValidator we are only able to test the public method of the class which is getValidatedText.
